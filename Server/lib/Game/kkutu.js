@@ -1421,7 +1421,7 @@ function getRewards(mode, score, bonus, rank, all, ss){
 			rw.score += score * 0.4;
 			break;
 		case 'KCW':
-			rw.score += score * 1.0;
+			rw.score += score * 1;
 			break;
 		case 'KTY':
 			rw.score += score * 0.3;
@@ -1452,12 +1452,12 @@ function getRewards(mode, score, bonus, rank, all, ss){
 	}
 	rw.score = rw.score
 		* (0.77 + 0.05 * (all - rank) * (all - rank)) // 순위
-		* 1.25 / (1 + 1.25 * sr * sr) // 점차비(양학했을 수록 ↓)
+		* 0.25 / (1 + 1.25 * sr * sr) // 점차비(양학했을 수록 ↓)
 	;
 	rw.money = 1 + rw.score * 0.01;
 	if(all < 2){
-		rw.score = rw.score * 0.05;
-		rw.money = rw.money * 0.05;
+		rw.score = rw.score * 0.7;
+		rw.money = rw.money * 0.7;
 	}else{
 		rw.together = true;
 	}

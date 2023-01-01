@@ -50,6 +50,7 @@ block CSS
 block Jungle
 	span#PUBLIC= PUBLIC ? "true" : undefined
 	span#URL= `${locals.PROTOCOL}://${locals.HOST}:${locals.PORT}/${locals._id}`
+	span#ROOM_PORT= locals.ROOM_PORT
 	span#MOREMI_PART= locals.MOREMI_PART.join(',')
 	span#AVAIL_EQUIP= locals.AVAIL_EQUIP.join(',')
 	span#NICKNAME_LIMIT= locals.NICKNAME_LIMIT ? JSON.stringify(locals.NICKNAME_LIMIT) : "{}"
@@ -172,6 +173,9 @@ block Middle
 		div.dialog-bar
 			h4= L('roundTime')
 			select#room-time
+				ption(value=1, style='color: #fe552a')
+				option(value=3, style='color: #4bbbc1')
+				option(value=5, style='color: #FF4444')
 				option(value=10, style='color: #FF4444')
 				option(value=30)
 				option(value=60, selected)

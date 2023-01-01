@@ -128,7 +128,7 @@ span{
 }
 	.autocomp-item{ margin: 1px 0px; }
 	.autocomp-item:hover, .autocomp-select{ color: #FFFFFF; background-color: rgba(50, 50, 50, 0.8); }
-#account{ float: right; margin: 1px; font-size: 11px; color: #444444; }
+#account{ float: right; margin: 1px; font-size: 18px; color: #ffffff; font-weight: bold; }
 #account-setting{
 	float: left;
 	padding-top: 8px;
@@ -137,15 +137,15 @@ span{
 }
 #account-info{
 	float: left;
-	padding-top: 8px;
-	width: 80px;
+	padding-top: 13px;
+	width: 143px;
 	text-align: center;
 	cursor: pointer;
 	transition: color 300ms ease;
 }
 #account-info:hover{ color: #EEEEEE; }
 #global-notice{
-	margin-top: 30px;
+	margin-top: 35px;
 	color: #111111;
 	text-align: center;
 	font-weight: bold;
@@ -277,14 +277,14 @@ span{
 #Top{
 	position: fixed;
 	width: 100%;
-	height: 30px;
-	box-shadow: 0px 2px 2px #111111;
+	height: 50px;
+	/*box-shadow: 0px 2px 2px #111111;*/
 	background-image: url('/img/topbg.png');
 	z-index: 5;
 }
 #Middle{
 	float: left;
-	margin-top: 50px;
+	margin-top: 75px;
 	width: 1010px;
 }
 #Bottom{
