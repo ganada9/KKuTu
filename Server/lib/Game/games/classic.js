@@ -100,7 +100,7 @@ exports.getTitle = function(){
 		var i, list = [];
 		var len;
 		
-		/* ���ϰ� �ʹ� �ɸ��ٸ� �ּ��� Ǯ��.
+		/* 부하가 너무 걸린다면 주석을 풀자.
 		R.go(true);
 		return R;
 		*/
@@ -412,9 +412,9 @@ function getMission(l){
 }
 function getAuto(char, subc, type){
 	/* type
-		0 ������ �ܾ� �ϳ�
-		1 ���� ����
-		2 �ܾ� ���
+		0 무작위 단어 하나
+		1 존재 여부
+		2 단어 목록
 	*/
 	var my = this;
 	var R = new Lizard.Tail();
@@ -445,7 +445,7 @@ function getAuto(char, subc, type){
 	if(!char){
 		console.log(`Undefined char detected! key=${key} type=${type} adc=${adc}`);
 	}
-	MAN.findOne([ '_id', char || "��" ]).on(function($mn){
+	MAN.findOne([ '_id', char || "*" ]).on(function($mn){
 		if($mn && bool){
 			if($mn[key] === null) produce();
 			else R.go($mn[key]);
@@ -545,12 +545,12 @@ function getSubChar(char){
 			ca = [ Math.floor(k/28/21), Math.floor(k/28)%21, k%28 ];
 			cb = [ ca[0] + 0x1100, ca[1] + 0x1161, ca[2] + 0x11A7 ];
 			cc = false;
-			if(cb[0] == 4357){ // ������ ��, ��
+			if(cb[0] == 4357){ // ㄹ에서 ㄴ, ㅇ
 				cc = true;
 				if(RIEUL_TO_NIEUN.includes(cb[1])) cb[0] = 4354;
 				else if(RIEUL_TO_IEUNG.includes(cb[1])) cb[0] = 4363;
 				else cc = false;
-			}else if(cb[0] == 4354){ // ������ ��
+			}else if(cb[0] == 4354){ // ㄴ에서 ㅐ
 				if(NIEUN_TO_IEUNG.indexOf(cb[1]) != -1){
 					cb[0] = 4363;
 					cc = true;
